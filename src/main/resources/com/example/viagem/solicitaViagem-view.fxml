@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.viagem.controller.ViagemController">
+   <children>
+      <Label alignment="CENTER" layoutX="191.0" layoutY="51.0" text="Solicitar Viagem" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="137.0" text="Carro:" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="130.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="152.0" text="Origem:" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="160.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="182.0" text="Destino:" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txf_origem" layoutX="200.0" layoutY="159.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="160.0" />
+      <TextField fx:id="txf_destino" layoutX="200.0" layoutY="188.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="190.0" />
+      <Button fx:id="bt_viajar" layoutX="200.0" layoutY="310.0" mnemonicParsing="false" onAction="#solicitarViagem" text="Viajar">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_cancelaViagem" layoutX="285.0" layoutY="310.0" mnemonicParsing="false" onAction="#cancelaViagem" text="Cancela">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="cb_carro" layoutX="366.0" layoutY="130.0" prefWidth="150.0" AnchorPane.leftAnchor="200.0" />
+   </children>
+</AnchorPane>
