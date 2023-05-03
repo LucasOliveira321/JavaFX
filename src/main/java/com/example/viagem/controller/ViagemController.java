@@ -1,5 +1,6 @@
 package com.example.viagem.controller;
 
+import com.example.viagem.Main;
 import com.example.viagem.db.Conexao;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -9,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,8 +57,8 @@ public class ViagemController implements Initializable {
     }
     @FXML
     private Button bt_cancelaViagem;
-    public void cancelaViagem(){
-        bt_cancelaViagem.setOnAction(ActionEvent -> Platform.exit());
+    public void cancelaViagem()throws IOException {
+        Main.mudaTela("menu");
     }
 
     Conexao conn = new Conexao();

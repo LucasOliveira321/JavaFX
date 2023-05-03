@@ -1,5 +1,6 @@
 package com.example.viagem.controller;
 
+import com.example.viagem.Main;
 import com.example.viagem.db.Conexao;
 import com.example.viagem.util.Alert;
 import javafx.application.Platform;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,12 +22,12 @@ public class LoginController implements Initializable {
     private TextField pf_senha;
     @FXML
     private Button bt_entrarLogin;
-    public void entrarLogin(){
+    public void entrarLogin() throws IOException {
         String log = txf_login.getText();
         String sen = pf_senha.getText();
 
         if(conn.resultSet("login","usuario").contains(log) & conn.resultSet("senha","usuario").contains(sen)){
-            System.out.println("deu certo!");
+            Main.mudaTela("menu");
         }else {
             Alert.showAlert("Error", null, "Login ou Senha está incorreto!", javafx.scene.control.Alert.AlertType.ERROR);
         }
@@ -38,8 +40,6 @@ public class LoginController implements Initializable {
     public void sairLogin(){
         bt_sairLogin.setOnAction(ActionEvent -> Platform.exit());
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

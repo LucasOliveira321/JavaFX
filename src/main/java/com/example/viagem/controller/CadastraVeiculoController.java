@@ -1,5 +1,6 @@
 package com.example.viagem.controller;
 
+import com.example.viagem.Main;
 import com.example.viagem.db.Conexao;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -58,8 +60,8 @@ public class CadastraVeiculoController implements Initializable {
     }
     @FXML
     private Button bt_cancelaVeiculo;
-    public void cancelaVeiculo(){
-        bt_cancelaVeiculo.setOnAction(actionEvent -> Platform.exit());
+    public void cancelaVeiculo() throws IOException {
+        Main.mudaTela("menu");
     }
 
     @Override

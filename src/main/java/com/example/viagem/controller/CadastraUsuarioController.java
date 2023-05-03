@@ -1,5 +1,6 @@
 package com.example.viagem.controller;
 
+import com.example.viagem.Main;
 import com.example.viagem.db.Conexao;
 import com.example.viagem.util.Alert;
 import javafx.application.Platform;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -20,7 +22,9 @@ public class CadastraUsuarioController implements Initializable {
     @FXML
     private Button bt_cancela;
     @FXML
-    public void cancela(){bt_cancela.setOnAction(actionEvent -> Platform.exit());}
+    public void cancela()throws IOException {
+        Main.mudaTela("menu");
+    }
 
     @FXML
     private Button bt_cadastrar;
